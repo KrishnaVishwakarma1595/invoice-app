@@ -1,38 +1,261 @@
-.App {
-  text-align: center;
+.fs4 {
+	font-size: 4px !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fs5 {
+	font-size: 5px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fs6 {
+	font-size: 6px !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.fs7 {
+	font-size: 7px !important;
 }
 
-.App-link {
-  color: #61dafb;
+.fs8 {
+	font-size: 8px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fs9 {
+	font-size: 9px !important;
+}
+
+.fs10 {
+	font-size: 10px !important;
+}
+
+.fs11 {
+	font-size: 11px !important;
+}
+
+.fs12 {
+	font-size: 12px !important;
+}
+
+.fs13 {
+	font-size: 13px !important;
+}
+
+.fs14 {
+	font-size: 14px !important;
+}
+
+.fs15 {
+	font-size: 15px !important;
+}
+
+.fs16 {
+	font-size: 16px !important;
+}
+
+.fs18 {
+	font-size: 18px !important;
+}
+
+.fs20 {
+	font-size: 20px !important;
+}
+
+.fs22 {
+	font-size: 22px !important;
+}
+
+.fs24 {
+	font-size: 24px !important;
+}
+
+.fs26 {
+	font-size: 26px !important;
+}
+
+.fs28 {
+	font-size: 28px !important;
+}
+
+.fs30 {
+	font-size: 30px !important;
+}
+
+.fs32 {
+	font-size: 32px !important;
+}
+
+.fs34 {
+	font-size: 34px !important;
+}
+
+.fs36 {
+	font-size: 36px !important;
+}
+
+.fs38 {
+	font-size: 38px !important;
+}
+
+.fs40 {
+	font-size: 40px !important;
+}
+
+.fs48 {
+	font-size: 48px;
+}
+
+.fs64 {
+	font-size: 64px;
+}
+
+.fs96 {
+	font-size: 96px;
+}
+
+.fw-200 {
+	font-weight: 200 !important;
+}
+
+.fw-300 {
+	font-weight: 300 !important;
+}
+
+.fw-400 {
+	font-weight: 400 !important;
+}
+
+.fw-500 {
+	font-weight: 500 !important;
+}
+
+.fw-600 {
+	font-weight: 600 !important;
+}
+
+.fw-700 {
+	font-weight: 700 !important;
+}
+
+.fw-800 {
+	font-weight: 800 !important;
+}
+
+.lh-3 {
+	line-height: 4px !important;
+}
+
+.lh-8 {
+	line-height: 8px !important;
+}
+
+.lh-10 {
+	line-height: 10px !important;
+}
+
+.lh-11 {
+	line-height: 11px !important;
+}
+
+.lh-12 {
+	line-height: 12px !important;
+}
+
+.lh-13 {
+	line-height: 13px !important;
+}
+
+.lh-14 {
+	line-height: 14px !important;
+}
+
+.lh-15 {
+	line-height: 15px !important;
+}
+
+.lh-16 {
+	line-height: 16px !important;
+}
+
+.lh-17 {
+	line-height: 17px !important;
+}
+
+.lh-18 {
+	line-height: 18px !important;
+}
+
+.lh-19 {
+	line-height: 19px !important;
+}
+
+.lh-21 {
+	line-height: 21px !important;
+}
+
+.lh-22 {
+	line-height: 22px !important;
+}
+
+.lh-23 {
+	line-height: 23px !important;
+}
+
+.lh-24 {
+	line-height: 24px !important;
+}
+
+.lh-26 {
+	line-height: 26px !important;
+}
+
+.lh-28 {
+	line-height: 28px !important;
+}
+
+.lh-30 {
+	line-height: 30px !important;
+}
+
+.lh-31 {
+	line-height: 31px !important;
+}
+
+.lh-32 {
+	line-height: 32px !important;
+}
+
+.lh-42 {
+	line-height: 42px !important;
+}
+
+.lh-45 {
+	line-height: 45px !important;
+}
+
+.lh-47 {
+	line-height: 47px !important;
+}
+
+.lh-144 {
+	line-height: 144px;
+}
+
+.lh-84 {
+	line-height: 84px;
+}
+
+.App{
+	display: grid;
+	grid-template-columns: 103px 1fr;
+	height: 100vh;
+}
+
+.AppRC{
+	overflow-y: auto;
+	height: 100vh;
+}
+
+@media screen and (max-width: 900px){
+	.App{ grid-template-columns: 1fr; }
+	.AppRC{
+		height: 100%;
+	}
 }

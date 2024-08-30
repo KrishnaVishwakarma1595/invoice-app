@@ -1,0 +1,138 @@
+.listContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.listHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listHeader h1{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 33px;
+    margin-bottom: 6px;
+    color: var(--body-color);
+}
+
+.listHeader p{
+    font-size: 13px;
+    line-height: normal;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.invoicesLists{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    list-style: none;
+}
+
+.emptyInvoicesList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.emptyInvoicesList h2{
+    margin-top: 66px;
+    margin-bottom: 23px;
+}
+
+.emptyInvoicesList p{
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    color: var(--gray);
+    width: 193px;
+    text-align: center;
+}
+
+.filterInvoice{
+    width: 192px;    
+    border-radius: 8px;
+    background-color: var(--edit-bg);
+    padding: 24px 24px 23px 24px;
+    position: absolute;
+    top: 40px;
+    left: -35px;
+	box-shadow: 0px 10px 20px 0px rgba(72,84,159, 25%);    
+}
+
+.filterInvoice ul li{ cursor: pointer; }
+.filterInvoice ul li:hover input[type="checkbox"] + label{ border-color: var(--purple); }
+
+.filterInvoice ul li input[type="checkbox"] + label{
+    width: 16px;
+    display: inline-block;
+    height: 16px;    
+    border: 1px solid transparent;
+    cursor: pointer; 
+    position: absolute;
+    top: -1.5px;
+    left: -1px;
+    border-radius: 2px;
+    background-color: var(--dd-hr);
+}
+
+.filterInvoice ul li input[type="checkbox"] + label:hover{
+    border-color: var(--purple);
+}
+
+.filterInvoice ul li input[type="checkbox"]:checked + label:before {
+    position: absolute;
+    width: 16px; height: 16px;    
+    top: 0;
+    left: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    background-color: var(--purple);
+    content: url('../../public/icon-check.svg');
+    font-size: 16px;
+    /* color: var(--white); */
+}
+
+.filterInvoice ul li input[type="checkbox"]:checked + label{
+    background: var(--purplish-blue);  
+    border-color: transparent;  
+}
+
+.filterInvoice ul li:has(input[type="checkbox"]:checked){ 
+    border-color: var(--purplish-blue);
+    background: var(--magnolia);
+}
+
+@media screen and (max-width: 580px){
+    .listHeader{ 
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+    .listHeader > :nth-child(1){
+        flex-direction: row !important;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .listHeader > :nth-child(2){
+        justify-content: space-between;
+        width: 100%;
+    }
+    .listHeader h1{
+        font-size: 24px;
+        line-height: normal;
+    }
+    .filterInvoice{
+        left: 0;
+    }
+}

@@ -1,0 +1,75 @@
+.invoiceCard{
+    width: 100%;
+    background: var(--invoice-card-bg);
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px -10px rgba(72,84,159,10.5%);
+    padding: 16px 24px 16px 32px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto 1fr 1fr 1fr 1fr;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.invoiceCard:hover{
+    border-color: var(--purple);
+}
+
+.invoiceCard span{ display: inline-block; }
+
+.invoiceId{
+    font-size: 15px;
+    line-height: normal;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: var(--body-color);    
+}
+
+.invoiceDueDate, .invoiceClientName, .invoiceMobieDueDate{
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+    color: var(--due-date);
+}
+
+.invoiceDueDate span, .invoiceMobieDueDate span{
+    color: var(--gray);
+}
+
+.invoiceMobieDueDate{ display: none !important; }
+
+.invoiceClientName{    
+    color: var(--client-name);
+}
+
+.invoiceToStats{
+    display: flex;
+    align-items: center;
+}
+
+.invoiceTotal{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: var(--body-color);
+}
+
+@media screen and (max-width: 700px){
+    .invoiceToStats img{
+        display: none;
+    }
+    .invoiceCard{
+        grid-template-columns: 1fr 1fr;
+        padding: 25px 24px 22px;
+    }
+    .invoiceDueDate{ display: none !important; }
+    .invoiceMobieDueDate{ display: inline-block !important; }
+    .invoiceClientName, .invoiceToStats{
+        justify-self: flex-end;
+    }
+}

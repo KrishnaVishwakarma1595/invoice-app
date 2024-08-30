@@ -1,13 +1,472 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root{       
+    --white: #ffffff;
+	--purple: #7C5DFA;
+	--light-purple: #9277FF;
+	--dark-black: #1E2139;
+	--off-black: #252945;
+	--light-gray: #DFE3FA;
+	--dark-gray: #888EB0;
+	--slatty: #7E88C3;
+	--darken-black: #0C0E16;
+	--red: #EC5757;
+	--pinkish: #FF9797;
+	--body-bg: #F8F8FB;
+	--black-shade: #141625;
+    /* FONTS */        
+    --ff-league-spartan: "League Spartan", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+[data-theme="light"]{
+	--body-background: var(--body-bg);
+	--body-color: var(--darken-black);
+	--gray: var(--dark-gray);
+	--invoice-card-bg: var(--white);
+	--due-date: var(--slatty);
+	--client-name: #858BB2;
+	--draft-bg: rgba(55, 59, 83, 0.1);
+	--draft-color: rgb(55, 59, 83);
+	--edit-bg: #F9FAFE;
+	--edit-btn-color: var(--slatty);
+	--edit-hover-bg: var(--light-gray);	
+	--amount-total: #373B53;
+	--input-bg: transparent;
+	--input-placeholder-color: rgba(12, 14, 22, 0.4);
+	--input-field-border: var(--light-gray);
+	--input-border-hover: var(--light-purple);
+	--drop-down-color: var(--darken-black);
+	--dd-hr: var(--light-gray);
+}
+
+[data-theme="dark"]{
+	--body-background: var(--black-shade);
+	--body-color: var(--white);
+	--gray: var(--light-gray);
+	--invoice-card-bg: var(--dark-black);
+	--due-date: var(--light-gray);
+	--client-name: var(--white);
+	--draft-bg: rgba(223, 227, 250, 0.1);
+	--draft-color: var(--light-gray);
+	--edit-bg: var(--off-black);
+	--edit-hover-bg: var(--white);
+	--edit-btn-color: var(--light-gray);	
+	--amount-total: var(--darken-black);
+	--input-bg: var(--dark-black);
+	--input-placeholder-color: var(--white);
+	--input-field-border: var(--off-black);
+	--input-border-hover: var(--off-black);
+	--drop-down-color: var(--light-gray);
+	--dd-hr: var(--dark-black);
+}
+
+/* Modern CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/*  */
+
+.whiteColor{ color: var(--white); }
+.blackColor{ color: var(--body-color); }
+.d-none{ display: none; }
+.d-flex{ display: flex; }
+.text-center{ text-align: center; }
+.flex-column{ flex-direction: column; }
+.flex-wrap{ flex-wrap: wrap; }
+.justify-content-between{ justify-content: space-between; }
+.justify-content-center{ justify-content: center; }
+.justify-content-start{ justify-content: flex-start; }
+.justify-content-end{ justify-content: flex-end; }
+.align-items-center{ align-items: center; }
+.align-items-start{ align-items: flex-start; }
+.align-items-end{ align-items: flex-end; }
+
+body{
+    background: var(--body-background) ;
+    color: var(--body-color);
+    font-family: var(--ff-league-spartan);    
+    position: relative;        
+    overflow-x: hidden;
+    font-optical-sizing: auto;    
+    font-style: normal;
+}
+
+main{
+	height: 100vh;
+}
+
+#invoice-sidebar{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #373B53;
+	padding-bottom: 24px;
+	border-top-right-radius: 24px;
+	border-bottom-right-radius: 24px;
+	z-index: 1;
+}
+
+.logo-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 103px;
+	height: 103px;
+	background-color: var(--purple);
+	border-top-right-radius: 24px;
+	border-bottom-right-radius: 24px;
+	position: relative;
+	z-index: 1;
+}
+
+.logo-container::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 53px;
+	background-color: var(--light-purple);
+	border-top-left-radius: 24px;
+	border-bottom-right-radius: 24px;
+	bottom: 0;
+	left: 0;
+}
+
+.sidebar-bottom{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#invoices{
+	width: 730px;
+	margin: 0 auto;
+	padding: 65px 0px 30px 0px;
+	display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.buttonWithIcon{
+	background-color: var(--purple);
+	transition: all 0.3s linear;
+	border-radius: 24px;
+	display: flex;
+	align-items: center;
+	border: none;
+	cursor: pointer;
+	padding: 8px 17px 8px 8px;
+	white-space: nowrap;
+}
+
+.buttonWithIcon:hover{ background-color: var(--light-purple); }
+
+.hashColor{
+	color: var(--slatty);
+}
+
+#invoice-details{
+	width: 730px;
+	margin: 0 auto;
+	padding: 65px 0px 54px 0px;
+	display: flex;
+    flex-direction: column;
+    gap: 31px;
+}
+
+.invoiceStatus{
+    width: 104px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 8px;
+    margin: 0px 20px 0px 40px;
+}
+
+.invoiceStatus span:first-child{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.invoiceStatus span:last-child{
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: -0.25px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.paid{ background-color: rgba(51, 214, 159, 0.1); }
+.draft{ background-color: var(--draft-bg); }
+.pending{ background-color: rgba(255, 143, 0, 0.1); }
+
+.paid span:last-child{ color: #33D69F; }
+.pending span:last-child{ color: rgb(255, 143, 0); }
+.draft span:last-child{ color: var(--draft-color); }
+
+.paid span:first-child{
+    background-color: rgb(51, 214, 159);
+}
+.pending span:first-child{
+    background-color: rgb(255, 143, 0);
+}
+.draft span:first-child{
+    background-color: var(--draft-color);
+}
+
+.editButton{
+	background-color: var(--edit-bg);
+	color: var(--edit-btn-color);
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: 700;
+	letter-spacing: -0.25px;
+	border:none;
+    border-radius: 24px;
+    width: 73px;
+    padding: 18px 24px 15px;
+	cursor: pointer;
+	transition: all 0.3s linear;
+}
+
+
+.editButton:hover{
+	background-color: var(--edit-hover-bg);	
+}
+
+.deleteButton{
+	background-color: var(--red);
+	color: var(--white);
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: 700;
+	letter-spacing: -0.25px;
+	border:none;
+    border-radius: 24px;
+    width: 90px;
+    padding: 18px 24px 15px;
+	cursor: pointer;
+	transition: all 0.3s linear;
+}
+
+.deleteButton:hover{
+	background-color: var(--pinkish);	
+}
+
+.formField{
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+}
+
+.form_checkbox{ visibility: hidden; }
+
+.fieldLabel{
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 15px;
+	color: var(--due-date);
+}
+
+.labelErr{ color: var(--red); }
+.fieldErr{ border-color: var(--red) !important; }
+
+.formInputField{
+	padding: 18px 20px 15px;
+	border-radius: 4px;
+	border: 1px solid var(--input-field-border);
+	background: var(--input-bg);
+	color: var(--body-color);
+	outline: none;
+	font-size: 15px;
+	line-height: normal;
+	font-weight: 700;
+	letter-spacing: -0.25px;
+	width: 100%;
+	transition: all 0.3s linear;
+}
+
+.formInputField::placeholder{ 
+	color: var(--input-placeholder-color);
+}
+
+.formInputField:is(:hover,:active, :focus){
+	border-color: var(--input-border-hover);
+}
+
+.dropdownBox{
+	position: absolute;
+	left: 0;
+	top: 57px;
+	width: 100%;
+	background: var(--edit-bg);
+	border-radius: 8px;
+	box-shadow: 0px 10px 20px 0px rgba(72,84,159, 25%);
+	display: flex;
+	flex-direction: column;
+}
+
+.custom-list-item{
+	padding: 17px 24px 15px;
+	font-size: 15px;
+	line-height: normal;
+	font-weight: 700;
+	letter-spacing: -0.25px;
+	transition: all 0.3s linear;
+	cursor: pointer;
+	color: var(--drop-down-color);
+}
+
+.custom-list-item:hover{
+	color: var(--purple);
+}
+
+.modalOverlay{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(20 22 37 / 49.93%);	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+.modalBody{
+	width: 480px;
+	background-color: var(--body-background);
+	border-radius: 12px;
+	padding: 51px 48px 48px 48px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+@media screen and (max-width: 900px){
+	#invoice-sidebar{
+		height: 80px;
+		width: 100%;
+		flex-direction: row;
+		border-top-right-radius: 0px;
+    	border-bottom-right-radius: 0px;
+		padding-bottom: 0;
+		padding-right: 24px;
+	}
+	.logo-container{ width: 80px; height: 80px; }
+	.sidebar-bottom{
+		flex-direction: row;
+	}
+	.sidebar-bottom hr{
+		height: 100%;
+		margin: 0px 32px !important;
+	}
+	#invoices, #invoice-details{
+		width: 100%;
+		padding: 65px 40px 30px 40px;
+	}
+}
+
+@media screen and (max-width: 700px){
+	.invoiceStatus{ margin: 0; }
+}
+
+@media screen and (max-width: 580px){
+	#invoices, #invoice-details{
+		padding: 32px 24px;
+	}
 }
