@@ -1,0 +1,1 @@
+export const API_HOST:string = "https://invoice-app-server-phi.vercel.app";

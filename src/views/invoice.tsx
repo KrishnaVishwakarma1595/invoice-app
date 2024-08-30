@@ -5,6 +5,7 @@ import Button from '../components/button-component';
 import { FullInvoice, ItemCart } from '../models/invoice-form';
 import InvoiceForm from '../components/invoice-form';
 import InvoiceDelete from '../components/modals/invoice-delete';
+import { API_HOST } from '../constants/config';
 
 const Invoice = () => {
     const navigate:NavigateFunction = useNavigate();
@@ -15,7 +16,7 @@ const Invoice = () => {
 
     const markInvoiceAsPaid = async() => {
         // console.log('invoice', invoice);
-        const result = await fetch('http://localhost:3001/api/markaspaid', {
+        const result = await fetch(API_HOST + '/api/markaspaid', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ const Invoice = () => {
     }
     
     const getInvoiceById = async() => {
-        const result = await fetch('http://localhost:3001/api/invoices/'+invoiceId);
+        const result = await fetch(API_HOST + '/api/invoices/'+invoiceId);
         const res = await result.json();
         setInvoice(res.invoices[0]);
     }
@@ -37,7 +38,7 @@ const Invoice = () => {
     }
 
     const onInvoiceDelete = async() => {
-        const result = await fetch('http://localhost:3001/api/removeinvoice/', {
+        const result = await fetch(API_HOST + '/api/removeinvoice/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

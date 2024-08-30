@@ -5,6 +5,7 @@ import Button from '../button-component';
 import DropDownComponent from '../dropdown-component';
 import { FullInvoice, Invoice, ItemCart } from '../../models/invoice-form';
 import { validateEmail } from '../../services/utils';
+import { API_HOST } from '../../constants/config';
 
 const InvoiceForm = ({
     discardForm,
@@ -175,8 +176,8 @@ const InvoiceForm = ({
             }
             console.log(dataToSubmit);
 
-            const api: String = invoice ? 'updateinvoice' : 'invoices'
-            const result = await fetch('http://localhost:3001/api/'+api, {
+            const API_ENDPOINT: String = invoice ? 'updateinvoice' : 'invoices'
+            const result = await fetch(API_HOST + '/api/' + API_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

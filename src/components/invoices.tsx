@@ -4,6 +4,7 @@ import Button from './button-component';
 import InvoiceCard from './invoice-list-card';
 import InvoiceForm from './invoice-form';
 import { FullInvoice } from '../models/invoice-form';
+import { API_HOST } from '../constants/config';
 
 interface Filters{
     draft:boolean,
@@ -24,7 +25,7 @@ const Invoices = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     
     const fetchInvoices = async () => {
-        const result = await fetch('http://localhost:3001/api/invoices');
+        const result = await fetch(API_HOST + '/api/invoices');
         const res = await result.json();
         console.log('Res', res);
         setAllInvoices(res.invoices.reverse());    
