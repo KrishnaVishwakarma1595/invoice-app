@@ -163,7 +163,7 @@ const Invoice = () => {
                                     <div className={Styles.itemGrid} key={index}>
                                         <div className='d-flex flex-column align-items-start' style={{ gap: 8 }}>
                                             <span className={`${Styles.itemBold} blackColor`}>{item.name}</span>
-                                            <span className={`${Styles.itemBold}`} style={{ color: 'var(--due-date)', textAlign: 'center' }}>
+                                            <span className={`${Styles.itemBold} ${Styles.itsMs}`} style={{ color: 'var(--due-date)', textAlign: 'center' }}>
                                                 {item.quantity} x £ {item.price}
                                             </span>
                                         </div>

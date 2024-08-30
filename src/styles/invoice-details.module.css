@@ -93,6 +93,8 @@
     border-bottom-right-radius: 12px;
 }
 
+.itsMs{ display: none !important; }
+
 @media screen and (max-width: 710px){
     .invoiceToDetails{
         gap: 60px;        
@@ -137,6 +139,7 @@
     }
     .itemsList > :nth-child(1){ display: none; }
     .itemGrid > :nth-child(2), .itemGrid > :nth-child(3){ display: none; }
+    .itsMs{ display: inline-block !important; }
 }
 @media screen and (max-width: 350px){
     .actionCTAs{
