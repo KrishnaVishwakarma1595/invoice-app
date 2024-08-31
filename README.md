@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# Frontend Mentor - Invoice app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Invoice app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Welcome! 👋, Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)  
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users is be able to:
 
-### `npm test`
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Create, read, update, and delete invoices
+- Receive form validations when trying to create/edit an invoice
+- Save draft invoices, and mark pending invoices as paid
+- Filter invoices by status (draft/pending/paid)
+- Toggle light and dark mode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![](./screenshot-mobile-light.png)
+![](./screenshot-mobile-light.png)
+![](./screenshot-desktop-dark.png)
+![](./screenshot-desktop-filters.png)
+![](./screenshot-desktop-invoice-view.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/responsive-contact-form-solution-FCWxWshwXQ)
+- Live Site URL: [Live URL](https://invoice-app-iota-black.vercel.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React JS](https://reactjs.org/) - JS library
+- [Typescript](https://www.typescriptlang.org/)
+- [Node JS](https://nodejs.org/) - Backend Server
+- [Express JS](https://expressjs.com/) - For Backend API
+- [Mongo DB](https://www.mongodb.com/) - For Datebase
+- [Vercel](https://vercel.com/) - For Deployment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What I learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Writing Semantic HTML5 markup
+- CSS Flexbox & Grids
+- Mobile-first workflow
+- JS Form Validatio
+- Gained more experience with building reusable UI components, managing state with hooks, and working with props
+- Improved app performance through effective component rendering and lifecycle management
+- Ensured type safety and reduced bugs by implementing static types
+- Created a robust backend to handle API requests, manage server-side logic, and route different endpoints
+- Learned how to work with middleware, and how to structure and secure routes effectively
+- Learned NoSQL database structure and how to create, read, update, and delete (CRUD) operations efficiently
+- Learned schema design for flexible data models and how to handle data relationships
+- Utilizing Vercel’s continuous integration and delivery (CI/CD) for fast and secure releases of Streamlined deployment process
+- Optimized the app for production, handling environment variables and configuration
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Useful resources
 
-## Learn More
+- [Rest API with Express, Node and Mongo DB](https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial) - Helped me to write API efficiently
+- [Mongoose Mongo DB Schema](https://mongoosejs.com/docs/guide.html) - Helped me to understand what is Schema and how to write Schema for DB handling with correct data
+- [React App  with Node JS Backend](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Frontend Mentor - [@KrishnaVishwakarma1595](https://www.frontendmentor.io/profile/KrishnaVishwakarma1595)
+- Codewars - [@krish_codewars_797](https://www.codewars.com/users/krish_codewars_797)

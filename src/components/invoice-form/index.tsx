@@ -6,6 +6,7 @@ import DropDownComponent from '../dropdown-component';
 import { FullInvoice, Invoice, ItemCart } from '../../models/invoice-form';
 import { validateEmail } from '../../services/utils';
 import { API_HOST } from '../../constants/config';
+import { Bounce, toast } from 'react-toastify';
 
 const InvoiceForm = ({
     discardForm,
@@ -191,6 +192,17 @@ const InvoiceForm = ({
             console.log('result res', res);
             save();
             discardForm(false);
+            toast.success('Saved changes successfully!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
         }
     }
 

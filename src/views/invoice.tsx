@@ -6,6 +6,7 @@ import { FullInvoice, ItemCart } from '../models/invoice-form';
 import InvoiceForm from '../components/invoice-form';
 import InvoiceDelete from '../components/modals/invoice-delete';
 import { API_HOST } from '../constants/config';
+import { Bounce, toast } from 'react-toastify';
 
 const Invoice = () => {
     const navigate:NavigateFunction = useNavigate();
@@ -25,6 +26,17 @@ const Invoice = () => {
         });
         const res = await result.json();
         setInvoice(res.invoice);
+        toast.success('Invoice marked as paid successfully!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
     }
     
     const getInvoiceById = async() => {
@@ -48,7 +60,18 @@ const Invoice = () => {
         const res = await result.json();
         console.log(res.removed);
         setModal(false);
-        navigate('/')
+        toast.success('Invoice deleted successfully!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+        navigate('/');
     }
 
     useEffect(() => {
